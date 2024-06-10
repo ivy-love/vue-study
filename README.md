@@ -10,3 +10,5 @@
 - 모달창 추가
 - mockup data 사용
 - import export 사용
+- props 사용
+- $emit 사용
