@@ -56,6 +56,7 @@ props 사용법:
 <template>
   <div class="wrap">
     <div class="menu">
+      <test :showAlert="alert"></test>
       <a href="#" class="link" v-for="(item, index) in items" :key="index">{{
         item
       }}</a>
@@ -88,6 +89,7 @@ props 사용법:
       :clicked="clicked"
       :isToggle="isToggle"
     ></Card> -->
+    <AxiosTest></AxiosTest>
   </div>
 </template>
 
@@ -96,6 +98,8 @@ import Card from "./components/Card.vue";
 import Modal from "./components/Modal";
 import data from "./assets/js/aptdata.js";
 import disData from "./components/discountData";
+import test from './components/test.vue';
+import AxiosTest from './components/AxiosTest.vue';
 
 export default {
   name: "App",
@@ -103,6 +107,8 @@ export default {
     Card,
     disData,
     Modal,
+    test,
+    AxiosTest
   },
   data() {
     return {
@@ -113,10 +119,17 @@ export default {
     };
   },
 
+  computed: {
+
+  },
   methods: {
     addNum(index) {
       this.products[index].declNum++; // vue에서 this는 data안에 있는 큰 오브젝트를 뜻함
     },
+
+    alert() {
+      alert("테스트입니다")
+    }
   },
 };
 </script>
